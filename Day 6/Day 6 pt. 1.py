@@ -12,7 +12,7 @@ for line in file:
     seen = set()
     line = line.strip().split()
     if line[0] == "toggle":
-        start_row, start_col = map(int,line[1].split(","))
+        start_row, start_col = map(int, line[1].split(","))
         end_row, end_col = map(int, line[3].split(","))
         queue.append((start_row, start_col))
         while queue:
@@ -28,7 +28,7 @@ for line in file:
                 seen.add((row, col + 1))
                 queue.append((row, col + 1))
     elif line[1] == "on":
-        start_row, start_col = map(int,line[2].split(","))
+        start_row, start_col = map(int, line[2].split(","))
         end_row, end_col = map(int, line[4].split(","))
         queue.append((start_row, start_col))
         while queue:
@@ -41,7 +41,7 @@ for line in file:
                 seen.add((row, col + 1))
                 queue.append((row, col + 1))
     else:
-        start_row, start_col = map(int,line[2].split(","))
+        start_row, start_col = map(int, line[2].split(","))
         end_row, end_col = map(int, line[4].split(","))
         queue.append((start_row, start_col))
         while queue:
